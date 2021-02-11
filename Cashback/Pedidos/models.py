@@ -1,35 +1,36 @@
 from django.db import models
 
+
 class Pedidos(models.Model):
 
-    IDPedidos = models.PositiveIntegerField(
+    id_pedidos = models.PositiveIntegerField(
         null=False,
         blank=False
     )
 
-    Valor_Total = models.PositiveIntegerField(
+    valor_total = models.PositiveIntegerField(
         null=False,
         blank=False
     )
 
-    Porcentagem_Cashback = models.PositiveIntegerField(
+    porcentagem_cashback = models.PositiveIntegerField(
         null=False,
         blank=False
     )
 
-    Data = models.DateField(
+    data = models.DateField(
         max_length=10,
         null=False,
         blank=False
     )
 
-    Status = models.CharField(
+    status = models.CharField(
         max_length=50,
         null=False,
         blank=False
     )
 
-    IDRevendedor = models.ForeignKey(
+    id_revendedor = models.ForeignKey(
         'Revendedores.Revendedores',
         on_delete= models.CASCADE
     )
@@ -37,4 +38,3 @@ class Pedidos(models.Model):
 
 
 
-objetos = models.Manager()
