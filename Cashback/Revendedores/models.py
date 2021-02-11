@@ -3,40 +3,37 @@ from django.db import models
 
 class Revendedores(models.Model):
 
-    IDRevendedor = models.PositiveIntegerField(
+
+    nome = models.CharField(
+        max_length=255,
         null=False,
-        blank=False
+        blank=False,
     )
 
-    Nome = models.CharField(
-        max_length=2147483647,
+    cpf = models.CharField(
+        max_length=14,
         null=False,
-        blank=False
+        blank=False,
     )
 
-    CPF = models.PositiveIntegerField(
-        null=False,
-        blank=False
-    )
-
-    Email = models.EmailField(
+    email = models.EmailField(
         max_length=254,
         null=False,
-        blank=False
+        blank=False,
     )
 
-    Senha = models.PositiveIntegerField(
+    senha = models.CharField(
+        max_length=255,
         null=False,
         blank=False
     )
 
-    Status = models.CharField(
+    status = models.CharField(
         max_length=50,
         null=False,
-        blank=False
+        blank=False,
+        default='Em validação'
     )
 
 
 
-
-objetos = models.Manager()
